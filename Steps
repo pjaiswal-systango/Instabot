@@ -1,0 +1,12 @@
+Steps to deploy code:
+
+1) sudo apt-get install libssl-dev libffi-dev xvfb python-dev virtualenv
+2) install chrome in server
+	$ cd ~
+	$ wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+	$ sudo dpkg -i google-chrome-stable_current_amd64.deb
+	$ sudo apt-get install -y -f
+	$ sudo rm google-chrome-stable_current_amd64.deb
+3) create and activate virtualenv.
+4) install all the requirement file.
+5) run code with python manage.py runserver 
