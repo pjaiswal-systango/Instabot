@@ -10,7 +10,7 @@ def home(request):
 def start(request):
 	insta_username = 'dump_systango'
 	insta_password = 'systango123'
-	session = InstaPy(username=insta_username, password=insta_password)
+	session = InstaPy(username=insta_username, password=insta_password, nogui=True)
 	session.login()
 	session.like_by_tags(['#creativewriter'], amount=100)
 	session.like_by_tags(['#actors'], amount=100)
