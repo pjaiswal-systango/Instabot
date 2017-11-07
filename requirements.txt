@@ -14,3 +14,5 @@ pytz==2017.2
 PyVirtualDisplay==0.2.1
 requests==2.13.0
 selenium==2.53.6
+celery==4.1.0
+redis==2.10.6
