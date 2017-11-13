@@ -5,8 +5,8 @@ from tasks import main_task
 
 
 def home(request):
-	return render(request,'home.html',{})
+	return render(request,'home.html',context={'is_started': False})
 
 def start(request):
 	main_task.delay()
-	return HttpResponseRedirect('/')
+	return render(request,'home.html',context={'is_started': True})

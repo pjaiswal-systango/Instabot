@@ -17,6 +17,9 @@
 <div class="container">
   <div class="row text-center">
     <a href="/start"><button class="btn btn-lg btn-info">Start Like</button></a>
+    {% if is_started %}
+      <p class="alert alert-success">The Like Process has been started! We'll notify you shortly.</p>
+    {% endif %}
   </div>
 </div>
 
