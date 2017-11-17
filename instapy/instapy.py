@@ -50,7 +50,7 @@ class InstaPy:
 
         self.browser = None
 
-        self.logFile = open('./logs/logFile.txt', 'a')
+        self.logFile = open('./logs/logFile.txt', 'w')
 
         self.username = username or environ.get('INSTA_USER')
         self.password = password or environ.get('INSTA_PW')
@@ -466,10 +466,10 @@ class InstaPy:
         tags = tags or []
 
         for index, tag in enumerate(tags):
-            print('Tag [{}/{}]'.format(index + 1, len(tags)))
-            print('--> {}'.format(tag.encode('utf-8')))
-            self.logFile.write('Tag [{}/[]]'.format(index + 1, len(tags)))
-            self.logFile.write('--> {}\n'.format(tag.encode('utf-8')))
+            # print('Tag [{}/{}]'.format(index + 1, len(tags)))
+            # print('--> {}'.format(tag.encode('utf-8')))
+            # self.logFile.write('Tag [{}/[]]'.format(index + 1, len(tags)))
+            # self.logFile.write('--> {}\n'.format(tag.encode('utf-8')))
 
             try:
                 links = get_links_for_tag(self.browser, tag, amount, media)
@@ -481,8 +481,8 @@ class InstaPy:
 
             for i, link in enumerate(links):
                 print('[{}/{}]'.format(i + 1, len(links)))
-                self.logFile.write('[{}/{}]'.format(i + 1, len(links)))
-                self.logFile.write(link)
+                # self.logFile.write('[{}/{}]'.format(i + 1, len(links)))
+                # self.logFile.write(link)
 
                 try:
                     inappropriate, user_name, is_video, reason = \
