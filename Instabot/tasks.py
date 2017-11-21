@@ -16,7 +16,7 @@ os.environ[ 'DJANGO_SETTINGS_MODULE' ] = "Instabot.settings"
 @celery.task
 def main_task():
 	insta_username = 'habitsanddesign'
-	insta_password = 'American1*'
+	insta_password = 'American1*11'
 	session = InstaPy(username=insta_username, password=insta_password, nogui=True)
 	session.login()
 	session.like_by_tags(['#creativewriter'], amount=100)
@@ -31,5 +31,5 @@ def main_task():
 	session.end()
 	with open('./logs/logFile.txt', 'r') as myfile:
 		data=myfile.read()
-		email = EmailMessage('InstaBot Notification', data, to=['keithhardock@gmail.com'])
+		email = EmailMessage('InstaBot Notification', data, to=['atpstpl@yopmail.com'])
 		email.send()
