@@ -466,10 +466,6 @@ class InstaPy:
         tags = tags or []
 
         for index, tag in enumerate(tags):
-            # print('Tag [{}/{}]'.format(index + 1, len(tags)))
-            # print('--> {}'.format(tag.encode('utf-8')))
-            # self.logFile.write('Tag [{}/[]]'.format(index + 1, len(tags)))
-            # self.logFile.write('--> {}\n'.format(tag.encode('utf-8')))
 
             try:
                 links = get_links_for_tag(self.browser, tag, amount, media)
@@ -480,7 +476,7 @@ class InstaPy:
                 continue
 
             for i, link in enumerate(links):
-                print('[{}/{}]'.format(i + 1, len(links)))
+                # print('[{}/{}]'.format(i + 1, len(links)))
                 # self.logFile.write('[{}/{}]'.format(i + 1, len(links)))
                 # self.logFile.write(link)
 
@@ -541,20 +537,21 @@ class InstaPy:
                     print('Invalid Page: {}'.format(err))
                     self.logFile.write('Invalid Page: {}\n'.format(err))
 
-                print('')
-                self.logFile.write('\n')
+            print('')
+            self.logFile.write('\n')
+            self.logFile.write('Tag:{}\n'.format(tag))
 
         print('Liked: {}'.format(liked_img))
         print('Already Liked: {}'.format(already_liked))
-        print('Inappropriate: {}'.format(inap_img))
-        print('Commented: {}'.format(commented))
-        print('Followed: {}'.format(followed))
+        # print('Inappropriate: {}'.format(inap_img))
+        # print('Commented: {}'.format(commented))
+        # print('Followed: {}'.format(followed))
 
         self.logFile.write('Liked: {}\n'.format(liked_img))
         self.logFile.write('Already Liked: {}\n'.format(already_liked))
-        self.logFile.write('Inappropriate: {}\n'.format(inap_img))
-        self.logFile.write('Commented: {}\n'.format(commented))
-        self.logFile.write('Followed: {}\n'.format(followed))
+        # self.logFile.write('Inappropriate: {}\n'.format(inap_img))
+        # self.logFile.write('Commented: {}\n'.format(commented))
+        # self.logFile.write('Followed: {}\n'.format(followed))
 
         self.followed += followed
 

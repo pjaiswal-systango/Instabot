@@ -16,7 +16,7 @@ os.environ[ 'DJANGO_SETTINGS_MODULE' ] = "Instabot.settings"
 @celery.task
 def main_task():
 	insta_username = 'habitsanddesign'
-	insta_password = 'American1*11'
+	insta_password = 'American1'
 	session = InstaPy(username=insta_username, password=insta_password, nogui=True)
 	session.login()
 	session.like_by_tags(['#creativewriter'], amount=100)
